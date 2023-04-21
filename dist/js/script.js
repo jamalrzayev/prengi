@@ -22,7 +22,15 @@ $(document).ready(function(){
       adaptiveHeight: true,
       autoplay: true,
       dots: false,
+      // fade: true,
+      // cssEase: 'linear',
       prevArrow: $('.products__slider-prev'),
       nextArrow: $('.products__slider-next'),
+    });
+
+    $('.products__slider-nav a').on('click', function(e){
+      e.preventDefault();
+      var slideIndex = $(this).data('slide');
+      $('.products__slider_content').slick('slickGoTo', slideIndex);
     });
   });
