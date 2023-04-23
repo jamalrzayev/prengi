@@ -24,8 +24,6 @@ $(document).ready(function(){
       adaptiveHeight: true,
       autoplay: true,
       dots: false,
-      // fade: true,
-      // cssEase: 'linear',
       prevArrow: $('.products__slider-prev'),
       nextArrow: $('.products__slider-next'),
     });
