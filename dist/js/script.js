@@ -80,24 +80,24 @@ $(document).ready(function(){
 
     // Form submission
 
-    $('form').submit(function(e) {
-        e.preventDefault();
-        if (!$(this).valid()) {
-            return;
-        }
-        $.ajax({
-            type: "POST",
-            url: "mailer/smart.php",
-            data: $(this).serialize()
-        }).done(function() {
-            $(this).find("input").val("");
-            $('#consultation').fadeOut();
-            $('.overlay, #thanks').fadeIn('slow');
+    // $('form').submit(function(e) {
+    //     e.preventDefault();
+    //     if (!$(this).valid()) {
+    //         return;
+    //     }
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "mailer/smart.php",
+    //         data: $(this).serialize()
+    //     }).done(function() {
+    //         $(this).find("input").val("");
+    //         $('#consultation').fadeOut();
+    //         $('.overlay, #thanks').fadeIn('slow');
 
-            $('form').trigger('reset');
-        });
-        return false;
-    });
+    //         $('form').trigger('reset');
+    //     });
+    //     return false;
+    // });
 
     // Smooth scroll and pageup
 
