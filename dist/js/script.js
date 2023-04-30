@@ -9,7 +9,7 @@ $(document).ready(function(){
       dots: true,
       appendDots:$('.dots'),
       prevArrow: $('.main__carousel_prev'),
-      nextArrow: $('.main__carousel_next'),
+      nextArrow: $('.main__carousel_next')
       // responsive: [
       //   {
       //       breakpoint: 768,
@@ -29,8 +29,10 @@ $(document).ready(function(){
       autoplay: true,
       dots: false,
       prevArrow: $('.products__slider-prev'),
-      nextArrow: $('.products__slider-next'),
+      nextArrow: $('.products__slider-next')
     });
+
+    // Moves to the slide that corresponds the index of nav
 
     $('.products__slider-nav a').on('click', function(e){
       e.preventDefault();
@@ -38,11 +40,49 @@ $(document).ready(function(){
       $('.products__slider_content').slick('slickGoTo', slideIndex);
     });
 
+    // Sets class active and removes from others
+
+    $('.products__slider_content').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.products__slider-nav a').removeClass('active');
+      $('.products__slider-nav a[data-slide=' + nextSlide + ']').addClass('active');
+    });
+    
+    // Setting active class, removing from others updated
+
+    // $('.products__slider-nav a').on('click', function(e){
+    //     e.preventDefault();
+    //     var slideIndex = $(this).data('slide');
+    //     $('.products__slider_content').slick('slickGoTo', slideIndex);
+    //     $('.products__slider-nav a').removeClass('active');
+    //     $('.products__slider-nav a[data-slide=' + slideIndex + ']').addClass('active');
+    // });
+      
+    // $('.products__slider_content').on('afterChange', function(event, slick, currentSlide){
+    //     $('.products__slider-nav a').removeClass('active');
+    //     $('.products__slider-nav a[data-slide=' + currentSlide + ']').addClass('active');
+    // });
+
+    // Third try
+
+    // $('.products__slider-nav a').on('click touchend', function(e){
+    //     e.preventDefault();
+    //     var slideIndex = $(this).data('slide');
+    //     $('.products__slider-nav a').removeClass('active');
+    //     $(this).addClass('active');
+    //     $('.products__slider_content').slick('slickGoTo', slideIndex);
+    // });
+
+    // $('.products__slider_content').on('afterChange', function(event, slick, currentSlide){
+    //     $('.products__slider-nav a').removeClass('active');
+    //     $('.products__slider-nav a[data-slide=' + currentSlide + ']').addClass('active');
+    // });
+      
+      
+
     // Header live ticker slider
 
     $('#live-ticker').slick({
         draggable: false,
-        // pauseOnHover: true,
         autoplay: true,
         autoplaySpeed: 0,
         speed: 3500,
