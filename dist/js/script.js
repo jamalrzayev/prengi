@@ -40,11 +40,12 @@ $(document).ready(function(){
       $('.products__slider_content').slick('slickGoTo', slideIndex);
     });
 
-    // Sets class active and removes from others
+    // Sets class active and color and removes from others
 
     $('.products__slider_content').on('beforeChange', function(event, slick, currentSlide, nextSlide){
       $('.products__slider-nav a').removeClass('active');
-      $('.products__slider-nav a[data-slide=' + nextSlide + ']').addClass('active');
+      $('.products__slider-nav a[data-slide=' + nextSlide + ']').addClass('active').css('color', 'var(--main-color)');
+      $('.products__slider-nav a[data-slide=' + currentSlide + ']').css('color', 'var(--root-white)');
     });
     
     // Setting active class, removing from others updated
