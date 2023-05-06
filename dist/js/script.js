@@ -102,7 +102,7 @@ $(document).ready(function(){
     $('.modal__close').on('click', function() {
         $('.overlay, #consultation, #thanks').fadeOut('slow');
     });
-
+   
     // Validate
 
     function validateForms(form){
